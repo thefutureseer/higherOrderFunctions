@@ -150,8 +150,20 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
 //reduce
 //ADD ALL AGES TOGETHER
-let sortAges = 0;
-for (let i = 0; i < ages.length; i++){
- sortAges += ages[i];
-}
-console.log(sortAges);
+// let addAges = 0;
+// for (let i = 0; i < ages.length; i++){
+//  addAges += ages[i];
+// }
+// console.log(sortAges);
+
+//WITH REDUCE ADD ALL AGES TOGETHER
+// let ageSum = ages.reduce(function(total, age) {
+//  return total + age;
+// }, 0);
+// console.log(ageSum);
+
+//SHORT HAND WITH REDUCE ADD ALL AGES TOGETHER
+let ageSum = ages.reduce((total, age) =>
+ total + age
+ , 0);
+ console.log(ageSum);
