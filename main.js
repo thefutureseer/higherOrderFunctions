@@ -12,17 +12,23 @@ const companies= [
 
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
-// // for loop
+// // FOR LOOP
+
 // for(let i=0; i < companies.length; i++){
 //  console.log(companies[i]);
 // }
 
+
 // //forEach
-// companies.forEach(function(company) {
+
+// companies.forEach(function(company,index,fullObject) {
 //  console.log(company.start)
 // });
 
-//filter
+
+// //FILTER
+// DRINKING AGE OVER 21
+//FOR LOOP 
 
 // let canDrink = [];
 // for(let i=0; i <= ages.length; i++){
@@ -30,25 +36,81 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 //     canDrink.push(ages[i]);
 //   }
 // }
-//  console.log(canDrink);
+//   console.log(canDrink);
+
+
+//ES5 BUILT IN METHOD, FILTER
+//GET ALL AGES ALLOWED TO DRINK
 
 // const canDrink = ages.filter(function(age, index, fullObject) {
 //  if (age,index,fullObject >= 21) {
 //   return true;
 // }
-//   console.log(age,index, fullObject);
+//    console.log(age,index, fullObject);
 // });
 
+//ES6 ARROW FUNCTION (ONE LINER)
+//WITH FILTER GET ALL AGES ALLOWED TO DRINK
+
 // const canDrink = ages.filter(age=> age >= 21);
-// console.log(canDrink);
+//  console.log(canDrink);
+
+
+//ES5
+// WITH FILTER GET ALL RETAIL COMPANIES
 
 // const retailCompanies = companies.filter(function(anything){
 //  if(anything.category === 'Retail'){
 //  return true;
 //  }
 // });
-// console.log(retailCompanies);
+//   console.log(retailCompanies);
 
 
-const retailCompanies = companies.filter(company => company.category === 'Retail');
- console.log(retailCompanies);
+//ES6 ARROW FUNCTION
+//WITH FILTER GET ALL RETAIL COMPANIES
+
+// const retailCompanies = companies.filter(company => company.category === 'Retail');
+//  console.log(retailCompanies);
+
+
+//ES6 ARROW FUNCTION
+//WITH FILTER GET 80's COMPANIES
+
+// const eightiesCompanies = companies.filter(company => (company.start >= 1979 && company.start < 1989));
+//  console.log(eightiesCompanies);
+
+
+//ES6 ARROW FUNCTION
+//WITH FILTER GET COMPANIES WHICH LASTED MORE THAN 10 YEARS
+
+// const lastedTenYears = companies.filter(company => company.end - company.start >= 10);
+//  console.log(lastedTenYears);
+
+
+// // MAP // Create any array from the current array
+//WITH MAP CREATE ARRAY OF COMPANY NAMES
+
+// const companyNames = companies.map(function(company){
+//   return company.name;
+// })
+//    console.log(companyNames);
+
+
+//WITH MAP GET ARRAY OF START TO END DATES
+
+// const mapCompanyNames = companies.map(function(company){
+//   return company.name;
+// });
+//    console.log(mapCompanyNames);
+
+
+// WITH MAP AND ES6 TEMPLATE STRINGS & SYNTAX FOR VARIABLE
+const mapRange = companies.map(function(company){
+  return `${company.name} [${company.start}-${company.end}]`;
+});
+   console.log(mapRange);
+
+
+//sort
+//reduce
