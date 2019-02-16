@@ -7,7 +7,7 @@ const companies= [
   {name: "Company Five", category: "Technology", start: 2009, end: 2014},
   {name: "Company six", category: "Finance", start: 1987, end: 2010},
   {name: "Company Seven", category: "Auto", start: 1986, end: 1996},
-  {name: "Company Eight", category: "Technology", start: 2011, end: 22016},
+  {name: "Company Eight", category: "Technology", start: 2011, end: 2016},
   {name: "Company Nine", category: "Retail", start: 1981, end: 1989}
 ];
 
@@ -15,14 +15,12 @@ const companies= [
 const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
 // // FOR LOOP
-
 // for(let i=0; i < companies.length; i++){
 // console.log(companies[i]);
 // }
 
 
 // //forEach
-
 // companies.forEach(function(company,index,fullObject) {
 // console.log(company.start)
 // });
@@ -30,8 +28,7 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
 // //FILTER
 // DRINKING AGE OVER 21
-//FOR LOOP 
-
+//FOR LOOP
 // let canDrink = [];
 // for(let i=0; i <= ages.length; i++){
 //   if(ages[i] >= 21) {
@@ -43,7 +40,6 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
 //ES5 BUILT IN METHOD, FILTER
 //GET ALL AGES ALLOWED TO DRINK
-
 // const canDrink = ages.filter(function(age, index, fullObject) {
 //  if (age,index,fullObject >= 21) {
 //   return true;
@@ -53,14 +49,12 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
 //ES6 ARROW FUNCTION (ONE LINER)
 //WITH FILTER GET ALL AGES ALLOWED TO DRINK
-
 // const canDrink = ages.filter(age=> age >= 21);
 // console.log(canDrink);
 
 
 //ES5
 // WITH FILTER GET ALL RETAIL COMPANIES
-
 // const retailCompanies = companies.filter(function(anything){
 //  if(anything.category === 'Retail'){
 //  return true;
@@ -71,41 +65,34 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
 //ES6 ARROW FUNCTION
 //WITH FILTER GET ALL RETAIL COMPANIES
-
 // const retailCompanies = companies.filter(company => company.category === 'Retail');
 // console.log(retailCompanies);
 
 
 //ES6 ARROW FUNCTION
 //WITH FILTER GET 80's COMPANIES
-
 // const eightiesCompanies = companies.filter(company => (company.start >= 1979 && company.start < 1989));
 // console.log(eightiesCompanies);
 
 
 //ES6 ARROW FUNCTION
 //WITH FILTER GET COMPANIES WHICH LASTED MORE THAN 10 YEARS
-
 // const lastedTenYears = companies.filter(company => company.end - company.start >= 10);
 // console.log(lastedTenYears);
 
 
 // // MAP // Create any array from the current array
 //WITH MAP CREATE ARRAY OF COMPANY NAMES
-
 // const companyNames = companies.map(function(company){
 //   return company.name;
 // })
 // console.log(companyNames);
 
-
 //WITH MAP GET ARRAY OF START TO END DATES
-
 // const mapCompanyNames = companies.map(function(company){
 //   return company.name;
 // });
 // console.log(mapCompanyNames);
-
 
 // WITH MAP NAME AND START TO END DATE AND ES6 TEMPLATE STRINGS & SYNTAX FOR VARIABLE
 // const mapRange = companies.map(function(company){
@@ -120,9 +107,11 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 //WITH MAP GET EACH AGE AND SQUARE IT
 // const sqrAge = ages.map(age => Math.sqrt(age));
 // console.log(sqrAge);
+
 //TIMES EACH AGE BY 2
 // const ageTimesTwo = ages.map(age => age *2);
 // console.log(ageTimesTwo);
+
 //ADD SECOND MAP TO SQUARE AGE AND TIMES BY TWO (can keep adding more Maps/Maths)
 //  const sqrAgeTimesTwo = ages
 //   .map(age => Math.sqrt(age))
@@ -148,13 +137,15 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 // const sortAges = ages.sort((a,b)=> a-b);
 // console.log(sortAges);
 
-//reduce
+
+//REDUCE
 //ADD ALL AGES TOGETHER
 // let addAges = 0;
 // for (let i = 0; i < ages.length; i++){
 //  addAges += ages[i];
 // }
-// console.log(sortAges);
+// console.log(addAges);
+
 
 //WITH REDUCE ADD ALL AGES TOGETHER
 // let ageSum = ages.reduce(function(total, age) {
@@ -163,7 +154,25 @@ const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 // console.log(ageSum);
 
 //SHORT HAND WITH REDUCE ADD ALL AGES TOGETHER
-let ageSum = ages.reduce((total, age) =>
- total + age
- , 0);
- console.log(ageSum);
+// let ageSum = ages.reduce((total, age) =>
+//  total + age
+//  , 0);
+//  console.log(ageSum);
+
+// GET TOTAL YEARS FOR ALL COMPANIES
+// const allYears = companies.reduce(function(total, years) {
+//   return total + (years.end - years.start);
+// }, 0);
+// console.log(allYears);
+
+//SHORT HAND ARROW FUNCTIONS
+// const allYears = companies.reduce((total, years) => total + (years.end - years.start), 0);
+// console.log(allYears);
+
+//////COMBINE ALL METHODS////////
+const combine = ages
+ .map(age => age * 2)
+ .filter(age => age >= 40)
+ .sort((a,b) => (a - b))
+ .reduce((a, b) => a + b, 0);
+ console.log(combine);
