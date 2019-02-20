@@ -1,4 +1,4 @@
-# higherOrderFunctions
+# higherOrderFunctions for beginners learning code.
 Examples on arrays and objects (with HTML file to test): filter, map, sort, reduce. With loop, ES5, and ES6 arrow functions and some ES6 template strings syntax for variables. 
 They say when you know functions, you become dangerous so use this info for good and not evil and
 at your own risk. Functions need to be learned by more people because there is an astronomical amount of work that needs to be 
